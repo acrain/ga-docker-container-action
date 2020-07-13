@@ -5,7 +5,7 @@ inputs:
   sonar-project-key:
     description: 'sonar project key'
     required: true
-  inputs.sonar-host-url:
+  sonar-host-url:
     description: 'Sonar server URL'
     required: true
     default: 'sonarcube.com'    
