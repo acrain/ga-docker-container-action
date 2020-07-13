@@ -18,7 +18,7 @@ outputs:
     description: 'The time we greeted you'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://sonarsource/sonar-scanner-cli'
   args:
     - 'sonar-scanner'
     - '-Dsonar.projectKey=${{ inputs.sonar-project-key }}'
