@@ -20,7 +20,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - 'sonar-scanner'
     - '-Dsonar.projectKey=${{ inputs.sonar-project-key }}'
     - '-Dsonar.host.url=${{ inputs.sonar-host-url }}'
     - '-Dsonar.login=${{ inputs.sonar-login }}'
