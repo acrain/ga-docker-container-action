@@ -2,7 +2,10 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  blizz: ${{ secrets.THE_SECRET }}
+  blizz:
+    description: 'the fasds'
+    required: true
+    default: ${{ secrets.THE_SECRET }}  
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
