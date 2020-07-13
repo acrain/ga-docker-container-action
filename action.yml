@@ -2,10 +2,17 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  sonar-project-key:
+    description: 'sonar project key'
     required: true
-    default: 'World'
+  inputs.sonar-host-url:
+    description: 'Sonar server URL'
+    required: true
+    default: 'sonarcube.com'    
+  sonar-login:
+    description: 'Sonar token'
+    required: true
+    default: 'sometokenvalue'       
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -14,4 +21,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
-    - andy
+    - '-Dsonar.projectKey=${{ inputs.sonar-project-key }}'
+    - '-Dsonar.host.url=${{ inputs.sonar-host-url }}'
+    - '-Dsonar.login=${{ inputs.sonar-login }}'
