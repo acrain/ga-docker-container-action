@@ -2,6 +2,7 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
+  blizz: ${{ secrets.THE_SECRET }}
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
@@ -14,4 +15,3 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
-    - ${{ secrets.THE_SECRET }}
